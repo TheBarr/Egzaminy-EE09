@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hurtownia</title>
+    <link rel="stylesheet" href="styl4.css">
+</head>
+
+<body>
+    <div id="logo">
+        <img src="logo.png" alt="hurtownia">
+    </div>
+
+    <div id="menu">
+        <a href="index.html">Strona głowna</a>
+        <a href="zamowienia.html">Zamówienia</a>
+        <a href="blog.html">Blog o kawie</a>
+        <a href="http://gatunki-kawy.pl">Odwiedz takze</a>
+    </div>
+
+    <div id="baner">
+        <h1>Hurtownia Kawy</h1>
+    </div>
+
+    <div id="lewy">
+        <h2>Oferta</h2>
+        <ol>
+            <li>Kawa palona Arabica</li>
+            <li>Kawa palona Robusta</li>
+            <li>Kawa bezkofeinowa</li>
+            <li id="zielona">Kawa zielona</li>
+        </ol>
+    </div>
+
+    <div id="prawy">
+        Podaj numer kawy: <br>
+        <input id="numer" type="number"> <br>
+        Podaj wage w dekagramach: <br>
+        <input id="waga" type="number">
+        <input type="submit" onclick="obliczanie()">
+        <p id="wynik"></p>
+    </div>
+
+    <div id="stopka">
+        Stronę przygotował:Bartolo
+    </div>
+
+    <script>
+        function obliczanie() {
+            const numerKawy = document.getElementById("numer").value
+            const wagaKawy = document.getElementById("waga").value
+            let cena = 0;
+            if (numerKawy == 1) {
+                cena = wagaKawy * 5
+            }
+            else if (numerKawy == 2) {
+                cena = wagaKawy * 6
+            }
+            else if (numerKawy == 3) {
+                cena = wagaKawy * 7
+            }
+            else {
+                cena = wagaKawy * 0
+            }
+            document.getElementById("wynik").innerHTML = "Koszt zamówienia wynosi: " + cena + "zł"
+        }
+
+    </script>
+</body>
+
+</html>
